@@ -1,35 +1,23 @@
 #include "main.h"
-/**
- * cap_string - capitalizes every first letter of a word in a string
- * separators of words are: space, tabulation
- * new line
- * @s: POinter to string
- *
- * Return: Pointer to s
- */
-char *cap_string(char *s)
-{
-	int count;
 
-	count = 0;
-  while (s[count] != '\0')
+/**
+ * puts2 - prints one char out of 2 of a string.
+ * @str: input string.
+ * Return: no return.
+ */
+void puts2(char *str)
+{
+	int count = 0;
+
+	while (count >= 0)
 	{
-		if (s[0] >= 97 && s[0] <= 122)
+		if (str[count] == '\0')
 		{
-			s[0] = s[0] - 32;
+			_putchar('\n');
+			break;
 		}
-		if (s[count] == ' ' || s[count] == '\t' || s[count] == '\n'
-		    || s[count] == ',' || s[count] == ';' || s[count] == '.'
-		    || s[count] == '.' || s[count] == '!' || s[count] == '?'
-		    || s[count] == '"' || s[count] == '(' || s[count] == ')'
-		    || s[count] == '{' || s[count] == '}')
-		{
-			if (s[count + 1] >= 97 && s[count + 1] <= 122)
-			{
-				s[count + 1] = s[count + 1] - 32;
-			}
-		}
+		if (count % 2 == 0)
+			_putchar(str[count]);
 		count++;
 	}
-	return (s);
 }
