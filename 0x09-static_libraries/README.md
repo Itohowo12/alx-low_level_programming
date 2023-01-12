@@ -1,0 +1,1 @@
+readme C - Static libraries
